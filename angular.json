@@ -123,8 +123,13 @@
               "devServerTarget": "accounting-dashboard:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "accounting-dashboard"
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "accounting-dashboard-c3144": {
+      "hosting": {
+        "accounting-dashboard": [
+          "accounting-dashboard-c3144"
+        ]
+      }
+    }
+  }
+}
