@@ -1,6 +1,6 @@
 
 
-# ![Cover](https://github.com/CarlosBayarri/accounting-dashboard/blob/main/cover_accounting_dashboard.jpg)
+# ![Cover](https://github.com/CarlosBayarri/accounting-dashboard/blob/master/cover_accounting_dashboard.jpg)
 # AccountingDashboard
 
   This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
@@ -32,20 +32,8 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 - [Firebase 8.0.0](https://github.com/firebase/)
 
 ## To-do
-- Add chat implementation
-- Event and task maps
-- Upload images and attach them to the task.
-- Add reminder. It has to be native function ...
+- Effects
 
-## Team
-
-[![Carlos Bayarri Cebrecos](https://avatars2.githubusercontent.com/u/31616221?s=400&u=f32637806040e934196bf7850b798a36867f5220&v=4)](https://github.com/CarlosBayarri)|.
----|---
-[Carlos Bayarri Cebrecos ](https://github.com/CarlosBayarri)|.
-
-## [License](https://github.com/CarlosBayarri/accounting-dashboard/LICENSE.md)
-
-MIT © [Carlos Bayarri Cebrecos ](https://github.com/CarlosBayarri/accounting-dashboard/blob/main/LICENSE)
 
 ## Development server
 
@@ -70,3 +58,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Team
+
+[![Carlos Bayarri Cebrecos](https://avatars2.githubusercontent.com/u/31616221?s=400&u=f32637806040e934196bf7850b798a36867f5220&v=4)](https://github.com/CarlosBayarri)|.
+---|---
+[Carlos Bayarri Cebrecos ](https://github.com/CarlosBayarri)|.
+
+## [License](https://github.com/CarlosBayarri/accounting-dashboard/LICENSE.md)
+
+MIT © [Carlos Bayarri Cebrecos ](https://github.com/CarlosBayarri/accounting-dashboard/blob/master/LICENSE)
