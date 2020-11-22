@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "install_ngrx": "npm i @ngrx/store --save",
     "install_ngrx_devtools": "npm i @ngrx/store-devtools --save",
-    "build_github": "ng build --prod --output-path docs --base-href https://carlosbayarri.github.io/ccounting-dashboard/"
+    "build_github": "ng build --prod --output-path docs --base-href https://carlosbayarri.github.io/accounting-dashboard/"
   },
   "private": true,
   "dependencies": {
