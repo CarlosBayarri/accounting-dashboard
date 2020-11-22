@@ -1,18 +1,31 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
+import { AppState } from '../app.reducer';
 import { User } from '../models/user.model';
+import * as authActions from '../auth/auth.actions';
+import { Subscription } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore) { }
+  userSubscription: Subscription;
+
+  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore, private store: Store<AppState>) { }
 
   initAuthListener() {
     this.auth.authState.subscribe(fuser => {
-
+      if (fuser) {
+        this.userSubscription = this.firestore.doc(`${fuser.uid}/user`).valueChanges().subscribe((fuser2: any) => {
+          const user = User.fromFirebase(fuser2);
+          this.store.dispatch(authActions.setUser({user: {...fuser2}}))
+        })
+      } else {
+        this.userSubscription.unsubscribe();
+      }
     })
   }
 
