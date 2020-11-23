@@ -15,11 +15,15 @@
               </thead>
 
               <tbody>
-                <tr>
-                  <td>Description</td>
-                  <td>Quantity</td>
-                  <td>Type</td>
-                  <td>actions</td>
+                <tr *ngFor="let item of incomeExpenseItems"> <!-- | incomeExpenseOrderBy-->
+                  <td>{{item.description}}</td>
+                  <td>{{item.quantity | currency:'EUR'}}</td>
+                  <td [class.text-success]="item.type === 'income'" [class.text-danger]="item.type === 'expense'">{{item.type}}</td>
+                  <td>
+                    <button color="warn" mat-stroked-button (click)="deleteItem(item.uid)">
+                      <mat-icon>delete</mat-icon> Delete
+                    </button>
+                  </td>
                 </tr>
               </tbody>
 

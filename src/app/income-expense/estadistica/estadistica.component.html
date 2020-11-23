@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-6">
+
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar>
+              <i class="fa fa-money-bill-alt text-success icon-md"></i>
+            </div>
+            <mat-card-title>Income</mat-card-title>
+            <mat-card-subtitle>{{totalIncome | currency:'EUR'}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="text-right">{{income}} items</p>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+      <div class="col-6">
+
+          <mat-card>
+            <mat-card-header>
+              <div mat-card-avatar>
+                <i class="fa fa-shipping-fast text-danger icon-md"></i>
+              </div>
+              <mat-card-title>Expenses</mat-card-title>
+              <mat-card-subtitle>{{totalExpense | currency:'EUR'}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p class="text-right">{{expense}} items</p>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+          
+        <div class="col-12 mt-2 mb-2">
+            <div class="card card-statistics">
+              <div class="card-body">
+
+                  <div class="clearfix">
+                      <div class="float-left">
+                        <i class="fa fa-building text-info icon-lg"></i>
+                      </div>
+                      <div class="float-right">
+                        <p class="mb-0 text-right">Difference</p>
+                        <div class="fluid-container">
+                          <h3 [class.text-success]="income - expense > 0" [class.text-danger]="income - expense < 0"
+                              class="font-weight-medium text-right mb-0">
+                            {{ totalIncome - totalExpense | currency:'EUR' }}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+              
+              
+              </div>    
+          </div>
+        </div>
+
+        <div class="col-12 p-5" *ngIf="income > 0 || expense > 0">
+            <div class="card card-statistics">
+              <div class="card-body">
+                <h1 class="card-title">Chart</h1>
+
+                <div style="display: block">
+                  <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    chartType="doughnut">
+                  </canvas>
+                </div>
+                
+              </div>
+            </div>
+        </div>
+
+</div>

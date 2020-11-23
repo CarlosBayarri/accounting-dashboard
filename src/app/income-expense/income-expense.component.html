@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-12">
+      <form [formGroup]="incomeForm" (ngSubmit)="save()">
+
+        <mat-card>
+
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon>payments</mat-icon>
+            </div>
+            <mat-card-title>New Income / Expenses</mat-card-title>
+            <mat-card-subtitle>Define the description, quantity and type of operation</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Description</mat-label>
+                <input matInput type="text" placeholder="Write the description" formControlName="description">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Quantity</mat-label>
+                <input matInput type="number" placeholder="Write the quantity" formControlName="quantity">
+              </mat-form-field>
+    
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Type</mat-label>
+                <mat-select formControlName="type">
+                  <mat-option value="income">Income</mat-option>
+                  <mat-option value="expense">Expense</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+          </mat-card-content>
+
+          <mat-card-actions class="flex-box d-flex">
+            <button mat-button type="reset">Cancel</button>
+            <span style="flex: auto;"></span>
+            
+            <button mat-button color="primary" type="submit" [disabled]="incomeForm.invalid">
+              <i class="fa fa-spin fa-sync" *ngIf="loading"></i>
+              <i class="fa fa-save" *ngIf="!loading"></i>
+              Add
+            </button>
+          </mat-card-actions>
+
+        </mat-card>
+        
+      </form>
+
+    </div>
+</div>
+          

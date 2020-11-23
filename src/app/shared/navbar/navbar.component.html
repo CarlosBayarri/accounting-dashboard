@@ -4,6 +4,12 @@
   
   <span style="flex: auto;"></span>
  
-  <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle mr-3" style="cursor: pointer;">
-
+  <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle mr-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+  <mat-menu #menu="matMenu">
+    <div class="flex-box flex-column w-100 text-center p-3" style="min-width: 200px;">
+      <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle" style="cursor: pointer;">
+      <h3 class="text-capitalize">{{username}}</h3>
+    </div>
+  
+  </mat-menu>
 </mat-toolbar>
