@@ -4,23 +4,9 @@ import { NgModule } from '@angular/core';
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
 
-
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { IncomeExpenseComponent } from './income-expense/income-expense.component';
-import { EstadisticaComponent } from './income-expense/estadistica/estadistica.component';
-import { DetalleComponent } from './income-expense/detalle/detalle.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-
 
 // Angular fire
 import { AngularFireModule } from '@angular/fire';
@@ -32,9 +18,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { IncomeExpenseOrderByPipe } from './pipes/income-expense-order-by.pipe';
 
-import { ChartsModule } from 'ng2-charts';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   imports: [
@@ -42,9 +27,9 @@ import { ChartsModule } from 'ng2-charts';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    ChartsModule,
-    FormsModule,
+
+    AuthModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -55,20 +40,7 @@ import { ChartsModule } from 'ng2-charts';
     })
   ],
   declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    IncomeExpenseComponent,
-    EstadisticaComponent,
-    DetalleComponent,
-    FooterComponent,
-    NavbarComponent,
-    SidebarComponent,
-    IncomeExpenseOrderByPipe
-  ],
-  exports: [
-    IncomeExpenseOrderByPipe
+    AppComponent
   ],
   providers: [
     

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.reducer';
 import { IncomeExpense } from '../../models/income-expense.model';
 import { MultiDataSet, Label } from 'ng2-charts';
+import { AppStateIncomeExpense } from '../income-expense.reducers';
 
 @Component({
   selector: 'app-estadistica',
@@ -20,7 +20,7 @@ export class EstadisticaComponent implements OnInit {
   public doughnutChartLabels: Label[] = ['Income', 'Expense'];
   public doughnutChartData: MultiDataSet = [[]];
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppStateIncomeExpense>) { }
 
   createStatistics(items: IncomeExpense[]) {
     this.totalExpense = 0;
