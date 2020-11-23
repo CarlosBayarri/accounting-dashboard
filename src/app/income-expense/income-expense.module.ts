@@ -12,7 +12,9 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { DashboardRoutesModule } from '../dashboard/dashboard-routes.module';
 import { StoreModule } from '@ngrx/store';
-import { incomeExpenseReducer } from './income-expense.reducers';
+import { incomeExpenseReducer } from '../store/reducers/income-expense.reducers';
+import { PartnersComponent } from './partners/partners.component';
+import { partnersReducer } from '../store/reducers/partners.reducers';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { incomeExpenseReducer } from './income-expense.reducers';
     IncomeExpenseComponent,
     EstadisticaComponent,
     DetalleComponent,
-    IncomeExpenseOrderByPipe
+    IncomeExpenseOrderByPipe,
+    PartnersComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,8 @@ import { incomeExpenseReducer } from './income-expense.reducers';
     FormsModule,
     SharedModule,
     DashboardRoutesModule,
-    StoreModule.forFeature('incomeExpense', incomeExpenseReducer)
+    StoreModule.forFeature('incomeExpense', incomeExpenseReducer),
+    StoreModule.forFeature('partners', partnersReducer)
   ],
   exports: [
     IncomeExpenseOrderByPipe

@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { AppState } from 'src/app/app.reducer';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
-import * as ui from '../../shared/ui.actions';
+import * as actions from '../../store/actions';
 
 @Component({
   selector: 'app-register',
@@ -31,15 +31,15 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   createUser() {
     if (this.registrationForm.invalid) return;
-    this.store.dispatch(ui.isLoading());
+    this.store.dispatch(actions.isLoading());
     const {name, email, password} = this.registrationForm.value;
     this.authService.createUser(name, email, password).then(response => {
       console.log(response);
-      this.store.dispatch(ui.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       this.router.navigate(['/'])
     }).catch(err => {
       console.error(err);
-      this.store.dispatch(ui.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

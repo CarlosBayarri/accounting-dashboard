@@ -5,8 +5,7 @@ import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 import { AppState } from '../app.reducer';
 import { User } from '../models/user.model';
-import * as authActions from '../auth/auth.actions';
-import * as incomeExpenseActions from '../income-expense/income-expense.actions';
+import * as actions from '../store/actions';
 
 import { Subscription } from 'rxjs';
 @Injectable({
@@ -29,12 +28,12 @@ export class AuthService {
         this.userSubscription = this.firestore.doc(`${fuser.uid}/user`).valueChanges().subscribe((fuser2: any) => {
           const user = User.fromFirebase(fuser2);
           this._user = user;
-          this.store.dispatch(authActions.setUser({user}));
-          this.store.dispatch(incomeExpenseActions.unSetItems());
+          this.store.dispatch(actions.setUser({user}));
+          this.store.dispatch(actions.unSetItems());
         })
       } else {
-        this.store.dispatch(authActions.unSetUser());
-        this.store.dispatch(incomeExpenseActions.unSetItems());
+        this.store.dispatch(actions.unSetUser());
+        this.store.dispatch(actions.unSetItems());
         this._user = null;
         if (this.userSubscription) this.userSubscription.unsubscribe();
       }

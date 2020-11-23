@@ -18,8 +18,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AuthModule } from './auth/auth.module';
+import { EffectsArray } from './store/effects/index';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -29,11 +32,13 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
 
     AuthModule,
+    HttpClientModule,
 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot( EffectsArray ),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production

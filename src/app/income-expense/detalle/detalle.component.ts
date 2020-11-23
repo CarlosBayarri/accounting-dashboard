@@ -4,7 +4,7 @@ import { IncomeExpense } from 'src/app/models/income-expense.model';
 import { Subscription } from 'rxjs';
 import { IncomeexpenseService } from '../../services/incomeexpense.service';
 import Swal from 'sweetalert2';
-import { AppStateIncomeExpense } from '../income-expense.reducers';
+import { AppStateIncomeExpense } from '../../store/reducers/income-expense.reducers';
 
 @Component({
   selector: 'app-detalle',

@@ -3,7 +3,9 @@
 # ![Cover](https://github.com/CarlosBayarri/accounting-dashboard/blob/master/cover_accounting_dashboard.jpg)
 # AccountingDashboard
 
-  This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2. Access here: https://carlosbayarri.github.io/accounting-dashboard/
+  This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2. Access here: https://carlosbayarri.github.io/accounting-dashboard/.
+  It is based on a dashboard to manage income and expenses. In this application the Redux pattern is used to create a store to store user information, income, expenses and colleagues. All data is hosted on Firebase and managed by Firestore, with the exception of colleagues, which are obtained through a rest api. An effect has been designed that listens to the action of colleagues and connects to their service.
+
 
 ### Development
 Want to contribute? Great!
@@ -30,35 +32,6 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 - [Angular cli 11.0.2](https://github.com/angular/angular-cli/blob/master/README.md)
 - [Ngrx 10.0.1](https://github.com/ngrx/platform)
 - [Firebase 8.0.0](https://github.com/firebase/)
-
-## To-do
-- Effects
-
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
 
 ## Team
 

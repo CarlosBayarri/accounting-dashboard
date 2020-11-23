@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AppState } from '../app.reducer';
 import { IncomeexpenseService } from '../services/incomeexpense.service';
-import * as incomeExpenseActions from '../income-expense/income-expense.actions';
+import * as actions from '../store/actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     this.userSubscription = this.store.select('user').pipe(filter((user0: any) => user0.user !== null)).subscribe(({user}) => {
       this.incomeExpenseSubscribe = this.incomeExpenseService.initIncomeExpenseListener(user.uid).subscribe(incomeExpenseFirebase => {
-        this.store.dispatch(incomeExpenseActions.setItems({items: incomeExpenseFirebase}))
+        this.store.dispatch(actions.setItems({items: incomeExpenseFirebase}))
       });
     })
 

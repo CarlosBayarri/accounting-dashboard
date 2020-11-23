@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
-import * as ui from '../../shared/ui.actions';
+import * as actions from '../../store/actions';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   loginUser() {
     if (this.loginForm.invalid) return;
 
-   this.store.dispatch(ui.isLoading());
+   this.store.dispatch(actions.isLoading());
 
     const {email, password} = this.loginForm.value;
     /*Swal.fire({
@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.AuthService.loginUser(email, password).then(response => {
       console.log(response);
       //Swal.close();
-      this.store.dispatch(ui.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       this.router.navigate(['/home'])
     }).catch(err => {
       console.error(err);
-      this.store.dispatch(ui.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

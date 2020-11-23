@@ -4,8 +4,7 @@ import { IncomeexpenseService } from '../services/incomeexpense.service';
 import { IncomeExpense } from '../models/income-expense.model';
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
-import * as uiActions from '../shared/ui.actions';
-import { isLoading } from '../shared/ui.actions';
+import * as actions from '../store/actions';
 import { AppState } from '../app.reducer';
 import { Subscription } from 'rxjs';
 
@@ -27,13 +26,13 @@ export class IncomeExpenseComponent implements OnInit, OnDestroy {
     const {description, quantity, type} = this.incomeForm.value;
     const incomeExpense = new IncomeExpense(description, quantity, type);
     delete incomeExpense.uid;
-    this.store.dispatch(uiActions.isLoading());
+    this.store.dispatch(actions.isLoading());
     this.IncomeexpenseService.createIncomeExpense(incomeExpense).then(() => {
       Swal.fire('Registry created', description, 'success');
-      this.store.dispatch(uiActions.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       this.incomeForm.reset();
     }).catch(err => {
-      this.store.dispatch(uiActions.stopLoading());
+      this.store.dispatch(actions.stopLoading());
       Swal.fire('Error', err, 'error');
     });
   }
