@@ -1,15 +1,40 @@
 
-<mat-toolbar color="primary" class="col-sm-12 col-12 p-0 fixed-top d-flex flex-row mat-elevation-z3">
-  <button mat-button><img src="favicon.ico"> Accounting dashboard</button>
-  
-  <span style="flex: auto;"></span>
+<mat-toolbar color="primary" class="w-100 fixed-top mat-elevation-z3">
+
+  <mat-toolbar-row class="transition05" [class.hide-toolbar]="isScrolling">
+
+    <button mat-button><img src="favicon.ico"> Accounting dashboard</button>
+
+    <span style="flex: auto;"></span>
+
+    <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle mr-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+    <mat-menu #menu="matMenu">
+      <div class="flex-box flex-column w-100 text-center p-3" style="min-width: 200px;">
+        <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle" style="cursor: pointer;">
+        <h3 class="text-capitalize">{{username}}</h3>
+        <mat-action-list>
+          <mat-list-item (click)="logOut()"> 
+            <mat-icon matListIcon>exit_to_app</mat-icon>
+            <h3 matLine> Logout </h3>
+          </mat-list-item>
+        </mat-action-list>
+      </div>
+    </mat-menu>
+
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+
+    <nav class="w-100 nav-position-correction" mat-tab-nav-bar mat-align-tabs="center">
+      <a mat-tab-link routerLink="/" [class.active-tab]="activeLink === 'home'" (click)="activeLink = 'home'" MatTooltip="Home"> <mat-icon>home</mat-icon> </a>
+      <a mat-tab-link routerLink="/payments" [class.active-tab]="activeLink === 'payments'" (click)="activeLink = 'payments'" MatTooltip="Payments"> <mat-icon>payments</mat-icon>  </a>
+      <a mat-tab-link routerLink="/detail" [class.active-tab]="activeLink === 'detail'" (click)="activeLink = 'detail'" MatTooltip="Detail"> <mat-icon>table_view</mat-icon>  </a>
+    </nav>
+
+  </mat-toolbar-row>
  
-  <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle mr-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
-  <mat-menu #menu="matMenu">
-    <div class="flex-box flex-column w-100 text-center p-3" style="min-width: 200px;">
-      <img src="assets/images/faces/face1.jpg" alt="profile image" height="40" width="40" class="rounded-circle" style="cursor: pointer;">
-      <h3 class="text-capitalize">{{username}}</h3>
-    </div>
-  
-  </mat-menu>
+  <!--<button mat-icon-button routerLink="/" class="m-4"><mat-icon>home</mat-icon></button>
+  <button mat-icon-button routerLink="/payments" class="m-4"><mat-icon>payments</mat-icon></button>
+  <button mat-icon-button routerLink="/detail" class="m-4"><mat-icon>table_view</mat-icon></button>
+  <button mat-icon-button routerLink="/partners" class="m-4"><mat-icon>person</mat-icon></button>-->
+
 </mat-toolbar>
