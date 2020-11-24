@@ -25,9 +25,9 @@
   <mat-toolbar-row>
 
     <nav class="w-100 nav-position-correction" mat-tab-nav-bar mat-align-tabs="center">
-      <a mat-tab-link routerLink="/" [class.active-tab]="activeLink === 'home'" (click)="activeLink = 'home'" MatTooltip="Home"> <mat-icon>home</mat-icon> </a>
-      <a mat-tab-link routerLink="/payments" [class.active-tab]="activeLink === 'payments'" (click)="activeLink = 'payments'" MatTooltip="Payments"> <mat-icon>payments</mat-icon>  </a>
-      <a mat-tab-link routerLink="/detail" [class.active-tab]="activeLink === 'detail'" (click)="activeLink = 'detail'" MatTooltip="Detail"> <mat-icon>table_view</mat-icon>  </a>
+      <a mat-tab-link routerLink="/" [class.active-tab]="activeLink === 'home'" (click)="activeLink = 'home'" matTooltip="Home"> <mat-icon>home</mat-icon> </a>
+      <a mat-tab-link routerLink="/groups" [class.active-tab]="activeLink === 'groups'" (click)="activeLink = 'groups'" matTooltip="Groups"> <mat-icon>people</mat-icon>  </a>
+      <a mat-tab-link routerLink="/detail" [class.active-tab]="activeLink === 'detail'" (click)="activeLink = 'detail'" matTooltip="Detail"> <mat-icon>table_view</mat-icon>  </a>
     </nav>
 
   </mat-toolbar-row>

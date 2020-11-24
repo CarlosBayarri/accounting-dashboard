@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IncomeexpenseService } from '../services/incomeexpense.service';
-import { IncomeExpense } from '../models/income-expense.model';
+import { IncomeexpenseService } from '../../services/incomeexpense.service';
+import { IncomeExpense } from '../../models/income-expense.model';
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
-import * as actions from '../store/actions';
-import { AppState } from '../app.reducer';
+import * as actions from '../../store/actions';
+import { AppState } from '../../app.reducer';
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppStatePartners } from 'src/app/store/reducers/partners.reducers';
-import { Partner } from '../../models/partner.model';
-import * as actions from '../../store/actions';
+import { Partner } from '../../../models/partner.model';
+import * as actions from '../../../store/actions';
 
 @Component({
   selector: 'app-partners',

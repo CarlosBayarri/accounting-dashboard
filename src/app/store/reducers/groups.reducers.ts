@@ -3,17 +3,21 @@ import * as actions from '../actions';
 import { Group } from '../../models/group.model';
 
 export interface GroupsState {
-    groups: Group[]; 
+    explorerGroups: Group[],
+    myGroups: Group[], 
 }
 
 export const GroupsInitialState: GroupsState = {
-    groups: [],
+    explorerGroups: [],
+    myGroups: []
 }
 
 const _GroupsReducer = createReducer(GroupsInitialState,
 
-    on(actions.setGroups, (state, {groups}) => ({ ...state, groups: [...groups] })),
-    on(actions.unSetGroups, (state) => ({ ...state, groups: []})),
+    on(actions.setGroups, (state, {groups}) => ({ ...state, explorerGroups: [...groups] })),
+    on(actions.setMyGroups, (state, {groups}) => ({ ...state, myGroups: [...groups] })),
+    on(actions.unSetGroups, (state) => ({ ...state, explorerGroups: []})),
+    on(actions.unSetMyGroups, (state) => ({ ...state, myGroups: []})),
 
 );
 

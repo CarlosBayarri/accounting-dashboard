@@ -13,7 +13,7 @@ const routes: Routes = [
     { 
         path: '',
         canLoad: [ AuthGuard ],
-        loadChildren: () => import('./income-expense/income-expense.module').then(m => m.IncomeExpenseModule)
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     { path: '**', redirectTo: '' }
 ];

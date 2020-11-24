@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IncomeExpense } from '../../models/income-expense.model';
+import { IncomeExpense } from '../../../models/income-expense.model';
 import { MultiDataSet, Label } from 'ng2-charts';
-import { AppStateIncomeExpense } from '../../store/reducers/income-expense.reducers';
+import { AppStateIncomeExpense } from '../../../store/reducers/income-expense.reducers';
 
 @Component({
   selector: 'app-estadistica',

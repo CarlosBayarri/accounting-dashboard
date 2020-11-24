@@ -18,8 +18,8 @@ export class GroupsService {
     return this.firestore.firestore.collection('groups').add({...group});
   }
 
-  initGroupListener(uid: string) {
-    return this.firestore.collection(`groups/${uid}`).snapshotChanges().pipe(
+  initMyGroupsListener(uid: string) {
+    return this.firestore.collection(`groups`, ref => ref.where("users", "array-contains", uid)).snapshotChanges().pipe(
       map(snapshot => snapshot.map(doc =>  ({uid: doc.payload.doc.id, ...doc.payload.doc.data() as any}) ))
     );
   }

@@ -1,4 +1,3 @@
-import { IncomeExpenseModule } from '../income-expense/income-expense.module';
 import { IncomeExpense } from './income-expense.model';
 
 export class Group {
