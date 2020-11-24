@@ -1,0 +1,19 @@
+.flex-box {
+    display: flex;
+  }
+
+  .active-tab {
+    color: white;
+    border-bottom: 2px solid white;
+  }
+
+  .nav-position-correction {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .hide-toolbar {
+    transition: 0.5s;
+    height: 0;
+    overflow: hidden;
+  }
